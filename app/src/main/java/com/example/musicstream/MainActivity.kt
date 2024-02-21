@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
 
      fun logout() {
+         MyExoPlayer.getInstance()?.release() // after logout song will be stop...
         FirebaseAuth.getInstance().signOut()
          startActivity(Intent(this,SignInActivity::class.java))
          finish()
